@@ -48,6 +48,7 @@ $(document).ready(function() {
     $("#start").on("click", function(){
         game.startGame();
         console.log(game.xtalValue);
+        $(this).fadeOut();
     });
 
     // Next we create a for loop to create crystals for every numberOption.
