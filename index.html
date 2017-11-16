@@ -11,31 +11,33 @@
 
 </head>
 <body>
+	<div id="wrap">
+		<div class="jumbotron w-75">
+			<div class="container text-left">
+				<h1>CRYSTALS COLLECTOR</h1>
+				<div id="description" class="p-3 my-3">
+					<p>There will be four crystals displayed as buttons on the page.</p>
+					<p>When the player clicks on a crystal, it will add a specific amount of points to the player's total score.</p>
+					<p>The player wins if their total score matches the random number from the beginning of the game.</p>
+					<p>The player loses if their score goes above the random number.</p>
+					<button class="btn-lg btn-primary" id="start">Start</button>		
+				</div> <!-- description -->
+				<div id="target" class="col-3"></div>
+				<div id="display" class="col-2"></div>
+				<div id="xtal"></div>
+				<div id="score" class="col-3"></div>
+	
+			</div> <!-- container -->
+		</div> <!-- jumbotron -->
+		
+	</div> <!-- wrap -->
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	<!-- link to Jquery -->
 
 	<script type="text/javascript" src="assets/javascript/game.js"></script> 
 	<!-- link to my game.js -->
 	
-
-	<div id="wrap">
-		<div class="jumbotron w-100">
-			<div class="container text-left">
-				<h1>CRYSTALS COLLECTOR</h1>
-				<div>
-					<div>
-						<button class="btn-lg btn-primary" id="start">Start</button>
-					</div>
-					<div id="display"></div>
-					<div id="xtal"></div>				
-				</div>
-			</div> <!-- container -->
-		</div> <!-- jumbotron -->
-		
-	</div> <!-- wrap -->
-
-
-
 
 	<!-- bootstrap JS -->
 

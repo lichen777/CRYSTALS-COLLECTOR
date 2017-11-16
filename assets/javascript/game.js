@@ -35,8 +35,8 @@ var game = {
     display : function() {
         $("#display").html("<p>Wins: " + game.wins + "</p>");
         $("#display").append("<p>Loses: " + game.loses + "</p>");
-        $("#display").append("<p>Target: " + game.targetNum + "</p>");
-        $("#display").append("<p>Score: " + game.score + "</p>");
+        $("#target").html("<p>Target: " + game.targetNum + "</p>");
+        $("#score").html("<p>Score: " + game.score + "</p>");
     }
     
 }
@@ -48,32 +48,30 @@ $(document).ready(function() {
     $("#start").on("click", function(){
         game.startGame();
         console.log(game.xtalValue);
-        $(this).fadeOut();
+        $("button").hide();
+
+        // Next we create a for loop to create crystals for every numberOption.
+        for (var i = 0; i < game.xtalImg.length; i++) {
+
+        // For each iteration, we will create an imageCrystal
+            var imageCrystal = $("<img>").addClass("xtalImage w-10").attr("src", game.xtalImg[i]).attr("data-xtalIndex", i).css("width", "20%");
+        // First each crystal will be given the class ".crystal-image".
+        // This will allow the CSS to take effect.
+        // Each imageCrystal will be given a src link to the crystal image
+        // Each imageCrystal will be given a data attribute called data-crystalValue.
+        // This data attribute will be set equal to the array value.
+        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+
+            $("#xtal").append(imageCrystal);
+        }
+
+        $(".xtalImage").on("click", function() {
+            var index = ($(this).attr("data-xtalIndex"));
+            console.log(this);
+            console.log($(this));
+            game.playGame(index);
+        });
     });
-
-    // Next we create a for loop to create crystals for every numberOption.
-    for (var i = 0; i < game.xtalImg.length; i++) {
-
-    // For each iteration, we will create an imageCrystal
-        var imageCrystal = $("<img>").addClass("xtalImage").attr("src", game.xtalImg[i]).attr("data-xtalIndex", i).css("width", "100px");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    // Each imageCrystal will be given a src link to the crystal image
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-
-        $("#xtal").append(imageCrystal);
-    }
-
-    $(".xtalImage").on("click", function() {
-        var index = ($(this).attr("data-xtalIndex"));
-        console.log(this);
-        console.log($(this));
-        game.playGame(index);
-    });
-
 });
 
 
