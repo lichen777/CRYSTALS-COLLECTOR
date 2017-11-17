@@ -18,16 +18,19 @@ var game = {
         for(var i = 0; i < 4; i++) {
             this.xtalValue.push(this.randomGenerate(1, 12));
         }
-        this.display();
+        //this.display();
     },
     playGame : function(input) {
+    	$("#win").empty();
         this.score += this.xtalValue[input];
         if (this.score == this.targetNum) {
             this.wins++;
+            $("#win").text("You Win!");
             this.startGame();
         }
         else if (this.score > this.targetNum) {
             this.loses++;
+            $("#win").text("You Lose!");
             this.startGame();
         }
         this.display();
