@@ -1,8 +1,7 @@
 .jumbotron {
 	margin: 0 auto;
-	background-image: url("https://www.wearetaylor.com/wp-content/uploads/2015/08/Colorful-Abstract-Polygon-Background-small.jpg")
+	background-image: url("../images/backgroundImg.jpg");
 }
-
 #description {
 	background-color: ivory;
 	color: green;
