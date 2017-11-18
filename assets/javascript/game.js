@@ -9,7 +9,7 @@ var game = {
     targetNum : 12,
     score : 0,
     randomGenerate : function(start, end) {
-        return Math.floor((Math.random() * end) + start);
+        return Math.floor((Math.random() * (end - start + 1)) + start);
     },
     startGame : function() {
         this.xtalValue = [];
